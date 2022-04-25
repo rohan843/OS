@@ -4,7 +4,16 @@ using namespace std;
 
 void schedule(int numTracks, int curTrack, vector<int> &queue)
 {
-    
+    int trackMovements = 0;
+    int cur = curTrack;
+    for (auto itr : queue)
+    {
+        cout << cur << " -> ";
+        trackMovements += abs(itr - cur);
+        cur = itr;
+    }
+    cout << cur << endl;
+    cout << "The total number of track movements needed are: " << trackMovements << endl;
 }
 
 int main()
